@@ -30,7 +30,7 @@ module.exports = function(app) {
         controller.rfaFilled
     );
     app.post(
-        "/api/rfa/accept",
+        "/api/rfa/:id/accept",
         controller.rfaAccept
     );
     app.post(

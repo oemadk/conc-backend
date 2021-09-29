@@ -77,8 +77,16 @@ exports.rfaFilled = (req, res) => {
 }
 exports.rfaAccept = (req, res) => {
     const id = req.body.id;
-    Rfa.find({_id: id}, function (err, docs) {
-        res.status(200).send(docs);
+    Rfa.findById({_id: id}, function (err, docs) {
+        docs.status = 'accepted';
+        docs.save((err, docs) => {
+            if (err) {
+                res.status(500).send({message: err});
+                return;
+            }
+            res.send(docs);
+        });
+        // res.status(200).send(docs);
     });
 }
 exports.rfaDecline = (req, res) => {

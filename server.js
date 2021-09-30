@@ -7,7 +7,7 @@ const app = express();
 const fs = require('fs');
 
 var corsOptions = {
-  origin: "http://localhost:4200"
+  origin: "http://23.96.36.35"
 };
 global.__basedir = __dirname;
 

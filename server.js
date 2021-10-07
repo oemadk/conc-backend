@@ -48,7 +48,7 @@ require("./app/routes/rfa.routes")(app);
 require("./app/routes/file.routes")(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
+const PORT = 80;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });

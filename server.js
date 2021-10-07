@@ -6,12 +6,12 @@ const dbConfig = require("./app/config/db.config");
 const app = express();
 const fs = require('fs');
 
-var corsOptions = {
-  origin: "http://23.96.36.35"
-};
+// var corsOptions = {
+//   origin: ""
+// };
 global.__basedir = __dirname;
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());

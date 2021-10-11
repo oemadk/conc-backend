@@ -6,12 +6,12 @@ const dbConfig = require("./app/config/db.config");
 const app = express();
 const fs = require('fs');
 
-// var corsOptions = {
-//   origin: ""
-// };
+var corsOptions = {
+  origin: "https://conc-frontend.vercel.app"
+};
 global.__basedir = __dirname;
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
@@ -48,7 +48,7 @@ require("./app/routes/rfa.routes")(app);
 require("./app/routes/file.routes")(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
